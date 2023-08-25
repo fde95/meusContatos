@@ -7,6 +7,11 @@ export const Card = styled.div`
   border-radius: 8px;
   max-width: 300px;
   width: 100%;
+  transition: 0.9s ease;
+  &:hover {
+    transition: 0.3s ease;
+    box-shadow: 0 0 40px rgba(26, 208, 255, 0.4);
+  }
   @media (max-width: 767px) {
     margin-bottom: 24px;
   }

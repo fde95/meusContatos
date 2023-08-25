@@ -36,11 +36,6 @@ const ListaDeContatos = () => {
         <span>
           Resultado para: <i> &quot;{termo}&ldquo;</i>
         </span>
-        <ul>
-          <li>{termo}</li>
-          <li>{criterio}</li>
-          <li>{valor}</li>
-        </ul>
         <S.Grid>
           {filtraTarefas().map((c) => (
             <li key={c.nomeContato}>
