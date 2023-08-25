@@ -9,28 +9,28 @@ type ContatosState = {
 const initialState: ContatosState = {
   itens: [
     {
-      nomeContato: 'Juan Manuel',
+      nome: 'Juan Manuel',
       categoria: enums.Categoria.FAMILIA,
       email: 'juan@gmail.com',
       tel: '11981257156',
       id: 1
     },
     {
-      nomeContato: 'Andrea Domingues',
+      nome: 'Andrea Domingues',
       categoria: enums.Categoria.FAMILIA,
       email: 'adet@gmail.com',
       tel: '11970247929',
       id: 2
     },
     {
-      nomeContato: 'Beatriz Sousa',
+      nome: 'Beatriz Sousa',
       categoria: enums.Categoria.FAMILIA,
       email: 'b.eatriz@gmail.com',
       tel: '11978879669',
       id: 3
     },
     {
-      nomeContato: 'Felipe Espinoza',
+      nome: 'Felipe Espinoza',
       categoria: enums.Categoria.TRABALHO,
       email: 'fdespinoza95@gmail.com',
       tel: '11978973663',
@@ -55,9 +55,27 @@ const contatosSlice = createSlice({
       if (indexDoContato >= 0) {
         state.itens[indexDoContato] = action.payload
       }
+    },
+    cadastrar: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
+      const contatoJaExiste = state.itens.find(
+        (contato) =>
+          contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+      )
+
+      if (contatoJaExiste) {
+        alert('Já existe um cadastro com esse nome')
+      } else {
+        const ultimoContato = state.itens[state.itens.length - 1]
+
+        const contatoNovo = {
+          ...action.payload,
+          id: ultimoContato ? ultimoContato.id + 1 : 1
+        }
+        state.itens.push(contatoNovo)
+      }
     }
   }
 })
 
-export const { remover, editar } = contatosSlice.actions
+export const { remover, editar, cadastrar } = contatosSlice.actions
 export default contatosSlice.reducer

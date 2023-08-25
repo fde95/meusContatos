@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 
 import Contato from '../../components/Contatos'
 import * as S from './styles'
+import { Main, Titulo, Resultado } from '../../styles/index'
 import { RootReducer } from '../../store'
 
 const ListaDeContatos = () => {
@@ -12,10 +13,9 @@ const ListaDeContatos = () => {
 
   const filtraTarefas = () => {
     let tarefasFiltradas = itens
-    if (termo) {
+    if (termo !== undefined) {
       tarefasFiltradas = tarefasFiltradas.filter(
-        (item) =>
-          item.nomeContato.toLowerCase().search(termo.toLowerCase()) >= 0
+        (item) => item.nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
       if (criterio === 'categoria') {
@@ -30,17 +30,17 @@ const ListaDeContatos = () => {
   }
 
   return (
-    <S.Main>
+    <Main>
       <S.Container>
-        <S.Titulo>Lista de Contatos</S.Titulo>
-        <span>
+        <Titulo>Lista de Contatos</Titulo>
+        <Resultado>
           Resultado para: <i> &quot;{termo}&ldquo;</i>
-        </span>
+        </Resultado>
         <S.Grid>
           {filtraTarefas().map((c) => (
-            <li key={c.nomeContato}>
+            <li key={c.nome}>
               <Contato
-                nomeContato={c.nomeContato}
+                nome={c.nome}
                 categoria={c.categoria}
                 email={c.email}
                 tel={c.tel}
@@ -50,7 +50,7 @@ const ListaDeContatos = () => {
           ))}
         </S.Grid>
       </S.Container>
-    </S.Main>
+    </Main>
   )
 }
 export default ListaDeContatos

@@ -10,7 +10,11 @@ export const Card = styled.div`
   transition: 0.9s ease;
   &:hover {
     transition: 0.3s ease;
-    box-shadow: 0 0 40px rgba(26, 208, 255, 0.4);
+    box-shadow: 0 0 30px rgba(26, 208, 255, 0.4);
+  }
+  em {
+    color: ${variaveis.textoSecundario};
+    font-size: 14px;
   }
   @media (max-width: 767px) {
     margin-bottom: 24px;
@@ -109,8 +113,10 @@ export const Link = styled.a`
 export const LinkLigar = styled(Link)`
   color: ${variaveis.verde};
   background-color: ${variaveis.fundoVerde};
+  opacity: 100%;
 `
 export const LinkEmail = styled(Link)`
   color: ${variaveis.laranja};
   background-color: ${variaveis.fundoLaranja};
+  opacity: 100%;
 `

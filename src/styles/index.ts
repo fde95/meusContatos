@@ -18,5 +18,21 @@ export const Container = styled.div`
     display: block;
   }
 `
+export const Main = styled.main`
+  background-color: ${variaveis.fundoTelaTarefas};
+  color: ${variaveis.branco};
+  padding: 30px 0;
+  height: 100vh;
+  overflow-y: scroll;
+`
+export const Titulo = styled.h2`
+  font-size: 32px;
+`
+export const Resultado = styled.span`
+  color: ${variaveis.textoSecundario};
+`
+export const Legenda = styled(Resultado)`
+  font-size: 10px;
+`
 
 export default EstiloGlobal

@@ -8,7 +8,7 @@ import ContatoClass from '../../models/Contato'
 type Props = ContatoClass
 
 const Contato = ({
-  nomeContato,
+  nome,
   categoria,
   tel: telOriginal,
   email: emailOriginal,
@@ -43,11 +43,16 @@ const Contato = ({
   return (
     <>
       <S.Card>
+        {estaEditando ? <em>Editando...</em> : ''}
         <S.Container>
-          <S.NomeContato>{nomeContato}</S.NomeContato>
-          <S.BotaoEdit onClick={() => setEstaEditando(true)} title="Editar">
-            <i className="bi bi-pencil-square"></i>
-          </S.BotaoEdit>
+          <S.NomeContato>{nome}</S.NomeContato>
+          {estaEditando ? (
+            ''
+          ) : (
+            <S.BotaoEdit onClick={() => setEstaEditando(true)} title="Editar">
+              <i className="bi bi-pencil-square"></i>
+            </S.BotaoEdit>
+          )}
         </S.Container>
 
         <S.Tag>{categoria}</S.Tag>
@@ -98,7 +103,7 @@ const Contato = ({
                 onClick={() => {
                   dispatch(
                     editar({
-                      nomeContato,
+                      nome,
                       categoria,
                       tel,
                       email,

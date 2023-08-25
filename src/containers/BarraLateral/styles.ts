@@ -41,3 +41,24 @@ export const Buscar = styled.input`
     transition: 0.9s ease;
   }
 `
+export const BotaoRetornar = styled.button`
+  margin-top: 24px;
+  cursor: pointer;
+  padding: 8px 16px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: ${variaveis.vermelho};
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(300, 0, 0, 0.6);
+  color: ${variaveis.branco};
+  text-decoration: none;
+  transition: 0.8s ease;
+  border: none;
+  &:hover {
+    background-color: ${variaveis.fundoVermelho};
+    box-shadow: none;
+    transition: 0.5s ease;
+  }
+`
