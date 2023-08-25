@@ -11,29 +11,29 @@ const initialState: ContatosState = {
     {
       nome: 'Juan Manuel',
       categoria: enums.Categoria.FAMILIA,
-      email: 'juan@gmail.com',
-      tel: '11981257156',
+      email: 'testeJuan@gmail.com',
+      tel: '11912345678',
       id: 1
     },
     {
       nome: 'Andrea Domingues',
       categoria: enums.Categoria.FAMILIA,
-      email: 'adet@gmail.com',
-      tel: '11970247929',
+      email: 'testeAndrea@gmail.com',
+      tel: '11912345678',
       id: 2
     },
     {
       nome: 'Beatriz Sousa',
       categoria: enums.Categoria.FAMILIA,
-      email: 'b.eatriz@gmail.com',
-      tel: '11978879669',
+      email: 'testeBeatriz@gmail.com',
+      tel: '11912345678',
       id: 3
     },
     {
       nome: 'Felipe Espinoza',
       categoria: enums.Categoria.TRABALHO,
-      email: 'fdespinoza95@gmail.com',
-      tel: '11978973663',
+      email: 'testeFelipe@gmail.com',
+      tel: '11912345678',
       id: 4
     }
   ]
